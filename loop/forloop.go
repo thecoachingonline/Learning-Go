@@ -16,4 +16,8 @@ func main() {
 	for j := 0; j < count; j++ {
 		fmt.Println("j =", j)
 	}
+
+	for {
+		fmt.Println("Hello Nanthachi")
+	}
 }
