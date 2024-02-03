@@ -2,6 +2,8 @@ package main
 
 import {
 	"fmt"
+	"bufio"
+	"os"
 }
 
 const aConst int = 64
@@ -33,4 +35,9 @@ func main() {
 
 	fmt.Println(aConst)
 	fmt.Println("The variable's type is %T\n", aConst)
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter text: ")
+	input, _ := reader.ReadString('\n')
+	fmt.Println("You entered:", input)
 }
