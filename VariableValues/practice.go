@@ -1,12 +1,12 @@
 package main
 
-import {
+import (
 	"fmt"
 	"bufio"
 	"os"
 	"strconv"
 	"strings"
-}
+)
 
 const aConst int = 64
 
