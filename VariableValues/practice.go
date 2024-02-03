@@ -1,12 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"bufio"
 	"math"
 	"os"
 	"strconv"
-	"strings"
+	"time"
 )
 
 const aConst int = 64
@@ -24,11 +24,11 @@ func main() {
 	var defaultInt int
 	fmt.Println(defaultInt)
 
-	ver anotherString = "This is another string"
+	var anotherString = "This is another string"
 	fmt.Println(anotherString)
 	fmt.Println("The variable's type is %T\n", anotherString)
 
-	ver anotherInt = 53
+	var anotherInt = 53
 	fmt.Println(anotherInt)
 	fmt.Println("The variable's type is %T\n", anotherInt)
 
@@ -48,7 +48,7 @@ func main() {
 	numInput, _ := reader.ReadString('\n')
 	aFloat, err := strconv.ParseFloat(string.TrimSpace(numInput), 64)
 	if err != nil {
-		fmt.Append()
+		fmt.Println(err)
 	} else {
 		fmt.Println("Value of number:", aFloat)
 	}
@@ -67,5 +67,15 @@ func main() {
 	circleRadius := 15.5
 	circumference := circleRadius * 2 * math.Pi
 	fmt.Println("Circumference: %.2f\n", circumference)
+
+	n := time.Now()
+	fmt.Println("I recorded this video at ", n)
+
+	t := time.Date(2019, time.November, 10, 23, 0, 0, 0, time.UTC)
+	fmt.Println("Go launched at ", t)
+	fmt.Println(t.Format(time.ANSIC))
+
+	parsedTime, _ := time.Parse(time.ANSIC, "Tue Nov 10 23:00:00 2009")
+	fmt.Println("The type of parsedTime is %T\n", parsedTime)
 
 }
