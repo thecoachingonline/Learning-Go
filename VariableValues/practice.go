@@ -4,6 +4,8 @@ import {
 	"fmt"
 	"bufio"
 	"os"
+	"strconv"
+	"strings"
 }
 
 const aConst int = 64
@@ -40,4 +42,14 @@ func main() {
 	fmt.Print("Enter text: ")
 	input, _ := reader.ReadString('\n')
 	fmt.Println("You entered:", input)
+
+	fmt.Print("Enter a number: ")
+	numInput, _ := reader.ReadString('\n')
+	aFloat, err := strconv.ParseFloat(string.TrimSpace(numInput), 64)
+	if err != nil {
+		fmt.Append()
+	} else {
+		fmt.Println("Value of number:", aFloat)
+	}
+
 }
