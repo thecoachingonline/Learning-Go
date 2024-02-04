@@ -87,4 +87,16 @@ func main() {
 	for i := range keys {
 		fmt.Println(states[keys[i]])
 	}
+
+	poodle := Dog{"Poodle", 10}
+	fmt.Println(poodle)
+	fmt.Printf("%+v\n", poodle)
+	fmt.Printf("Breed: %v\nWeight: %v\n", poodle.Breed, poodle.Weigth)
+	poodle.Weigth = 9
+	fmt.Printf("Breed: %v\nWeight: %v\n", poodle.Breed, poodle.Weigth)
+}
+
+type Dog struct {
+	Breed string
+	Weigth int
 }
