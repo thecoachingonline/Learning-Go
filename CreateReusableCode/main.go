@@ -12,6 +12,17 @@ func main()  {
 	multiSum, multiCount := addAllValues(4, 7, 9, 45)
 	fmt.Println("Sum of multiple values:", multiSum)
 	fmt.Println("Count of items", multiCount)
+
+	poodle := Dog{"Poodle", 10, "Woof!"}
+	fmt.Println(poodle)
+	fmt.Printf("%+v\n", poodle)
+	fmt.Printf("Breed: %v\nWeight: %v\n", poodle.Breed, poodle.Weight)
+
+	poodle.Speak()
+	poodle.Sound = "Arf!"
+	poodle.Speak()
+	poodle.SpeakThreeTime()
+	poodle.SpeakThreeTime()
 }
 
 func doSomething()  {
@@ -28,4 +39,22 @@ func addAllValues(values ...int) (int, int) {
 		total += v
 	}
 	return total, len(values)
+
+}
+
+// Dog is a struct
+type Dog struct {
+	Breed string
+	Weight int
+	Sound string
+}
+
+// Speak is how the dog speaks
+func (d Dog) Speak() {
+	fmt.Println(d.Sound)
+}
+
+func (d Dog) SpeakThreeTime() {
+	d.Sound = fmt.Sprintf("%v %v %v", d.Sound, d.Sound, d.Sound)
+	fmt.Println(d.Sound)
 }
